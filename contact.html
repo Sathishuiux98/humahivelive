@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="./assets/favicon.svg"  >
+    <style>
+        @font-face {
+            font-family: 'Satoshi-Variable';
+            src: url('../Satoshi_Complete/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff2') format('woff2'),
+                url('../Satoshi_Complete/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Black.woff') format('woff'),
+                url('../Satoshi_Complete/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf') format('truetype');
+            font-weight: 300 900;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
+        font-family: 'Satoshi-Medium';
+        src: url('../Satoshi_Complete/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'),
+            url('../Satoshi_Complete/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff') format('woff'),
+            url('../Satoshi_Complete/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf') format('truetype');
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+}
+        @font-face {
+            font-family: 'THICCCBOI';
+            src: url('../thicccboi/fonts/Webfont/THICCCBOI-SemiBold.woff2') format('woff2'),
+                url('../thicccboi/fonts/TTF/THICCCBOI-SemiBold.ttf') format('truetype');
+            font-weight: 300 900;
+            font-display: swap;
+            font-style: normal;
+        }
+    </style>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "ZDmpdgTHkzrO9OJ5X",
+      });
+   })();
+</script>
+</head>
+<body>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <img src="../assets/emial-message.svg" />
+            <span class="popup-header">Email Sent Successfully</span>
+            <span class="popup-content">Thank you for reaching HumaHive. Team will reach out you shortly.!</span>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+ 
+
+<!--header-->
+<div class="humahive-container">
+    <div class="container-head">
+        <div class="humahive-container-header  p-0 row ">
+            <div class="header col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 header-position-left">
+                <a href="index.html" class="d-flex align-items-center gap-2 contact-us">
+                <img src="../assets/header1.svg" class="header-image" />
+                <div class="header-text">
+                    <div class="title">HumaHive</div>
+                </div>
+            </a>
+            </div>
+            <div class="d-flex justify-content-end col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 header-position">
+                
+                <div class="contact-button">
+                    <a href="contact.html" class="text-white contact-us">
+                    <div class="contact-text">Contact Us</div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<!--contact us-->
+<div class="p-5 main_contact_mob">
+    <div class="row p-5 main_contact_mob ">
+        <div class="col-12 col-md-6 p-0">
+            <img src="../assets/contact_img.svg" class="contact_mob" alt=""> 
+        </div>
+        <div class="col-12 col-md-6 p-0">
+            <form id="contactForm">
+         <div class="contact_details d-flex flex-column gap-4">
+            <p class="connection_text">Lets have a connect</p>
+            <div class="d-flex flex-column name">
+                <label name="name">Name</label>
+                <input type="text"id="username" name="name" class="pl-3" placeholder="Enter your name">
+                <span class="error-message" id="usernameError"></span>    
+            </div>
+            <div class="d-flex gap-3 phn_mob">
+                <div class="d-flex flex-column phone col-12 col-md-6">
+                    <label name="phone">Phone Number</label>
+                    <input type="text" id="usermobile" name="phone" placeholder="Enter your phone number">
+                    <span class="error-message" id="phoneError"></span>    
+                </div>
+                <div class="d-flex flex-column email col-12 col-md-6">
+                    <label name="email">Email</label>
+                    <input type="email" id="useremail" name="email"  placeholder="Enter your email"> 
+                    <span class="error-message" id="emailError"></span>   
+                </div>
+        
+            </div>
+    
+           
+            <div class="d-flex flex-column message">
+                <label name="message">Message</label>
+                <input type="text" id="usermessage" name="message">  
+                <span class="error-message" id="messageError"></span>   
+            </div>
+
+           <div class="humahive-container-header">
+            <div class="contact-button">
+                <div class="contact-text" id="contactForm" onclick="sendmail()" type="submit">Send Message</div>
+            </div>
+           </div>
+
+
+      
+    
+         </div>
+        </form>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+    <!--footer-->
+    <div class="main_footer pt-5">
+        <div class="sub_container_footer">
+            <div class="d-flex justify-content-between f_container_height">
+                <div class="d-flex flex-column justify-content-between huma_mob">
+                    <div>
+                        <a href="index.html"> 
+                        <span class="d-flex align-items-center logo_mob"> <img src="../assets/huma_1.svg" alt=""><span class="mob_logo"> <img
+                            src="../assets/huma_2.svg" alt=""></span> </span>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column second_child">
+                        <span>Our cost-effective HR solutions reduce turnover,</span>
+                        <span>boost efficiency, and ensure compliance,</span>
+                        <span>delivering long-term savings and ROI.</span>
+                    </div>
+
+                </div>
+                <div class="summary_container">
+                    <ol class="d-flex flex-column gap-4">
+                        
+                        <li> <a href="index.html" target="_self" class="text-white contact-us">Services</a></li>
+                        <li><a href="index.html" target="_self" class="text-white contact-us">Our Process</a></li>
+                        <li><a href="index.html" target="_self" class="text-white contact-us">Why HumaHive</a></li>
+                        <li> <a href="index.html" target="_self" class="text-white contact-us">Testimonials</a></li>
+                        <li><a href="contact.html"  class="text-white contact-us">Contact Us</a></li>
+                    </ol>
+
+                </div>
+                <div class="subscribe_wrapper">
+
+                    <div class="pt-3 d-flex flex-column gap-3 address_mob">
+                        <div class="d-flex gap-2">
+                            <div>
+                                <span class=""><img src="../assets/email.svg" alt=""></span>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <span style="color:#C6C6C6">Mail ID</span>
+                                <span style="color:#FFF;">Contact@humahive.com</span>
+                            </div>
+                        </div>
+                        <!--second-->
+                        <div class="d-flex gap-2">
+                            <div>
+                                <span><img src="../assets/contact_number.svg" alt=""></span>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <span style="color:#C6C6C6">Phone Number</span>
+                                <span style="color:#FFF;">+91 9876543210</span>
+                            </div>
+                        </div>
+                        <!--third-->
+                        <div class="d-flex gap-2">
+                            <div>
+                                <span><img src="../assets/contact_map.svg" alt=""></span>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <span style="color:#C6C6C6">Address</span>
+                                <span style="color:#FFF;">TSLR NO 2, Part 3, Partward 3,</span>
+                                <span style="color:#FFF;">BLK 10,P NO 28 Tiruchengodu, 637211</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <div>
+                                <a href="https://www.linkedin.com/company/humahive-hr-services-pvt-ltd/" >
+                                <span class=""><img src="../assets/linkIn.svg" alt=""></span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="final_container">
+                <div class="initial_footer">
+                    <img src="../assets/main_footer1.svg" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <script src="../script/contact.js"></script>
+    
+</body>
+</html>
