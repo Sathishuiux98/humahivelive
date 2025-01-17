@@ -20,6 +20,8 @@ function sendmail() {
       const message = document.getElementById("usermessage").value;
 
       const sendEmail = async () => {
+
+        
         const apiKey = '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';
         const url = 'https://api.sendinblue.com/v3/smtp/email';
         
@@ -57,6 +59,7 @@ function sendmail() {
             if (response.ok) {
                 const result = await response.json();
                 console.log('Email sent successfully:', result);
+              alert('success')
     
             } else {
                 console.error('Error sending email:', response.statusText);
