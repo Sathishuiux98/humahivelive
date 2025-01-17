@@ -18,21 +18,73 @@ function sendmail() {
       const phone = document.getElementById("usermobile").value;
       const email = document.getElementById("useremail").value;
       const message = document.getElementById("usermessage").value;
+
+      const sendEmail = async () => {
+        const apiKey = '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'; // Replace with your Sendinblue API key
+        const url = 'https://api.sendinblue.com/v3/smtp/email';
+        
+        body = 'Hi HumaHive,<br>Someone has reached out to you via your website regarding your HR services. The details of the user are provided below:<br><br>Name : <NAME><br>Email : <EMAIL><br>Phone Number : <PHONE><br>Message : <MESSAGE>'
+        body = body.replace('<PHONE>',phone)
+        body = body.replace('<NAME>',name)
+        body = body.replace('<EMAIL>',email)
+        body = body.replace('<MESSAGE>',message)
+
+    
+        const emailData = {
+            sender: { name: 'dinesh sivakumar', email: 'sivakumardinesh16@gmail.com' },
+            to: [
+                { email: 'contact@humahive.com', name: 'huma' }
+            ],
+            subject: 'New Inquiry Regarding HR Services',
+
+            htmlContent: body
+
+    
+        };
+    
+        try {
+    console.log('sent successfully')
+    
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'api-key': apiKey
+                },
+                body: JSON.stringify(emailData)
+            });
+    
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Email sent successfully:', result);
+    
+            } else {
+                console.error('Error sending email:', response.statusText);
+            }
+        } catch (error) {
+    console.log('sent successfully')
+    
+            console.error('Error:', error);
+        }
+    };
+    
+    sendEmail();
+    
     
       // Send email via EmailJS
-      emailjs.send('service_315nxpu', 'template_bmv0yrr', {
-        name: name,
-        phone: phone,
-        email: email,
-        message: message
-      }).then(function(response) {
-        console.log('Success:', response);
-        document.getElementById("popupOverlay").style.display = "flex";
-        document.getElementById("contactForm").reset();
-      }, function(error) {
-        console.log('Error:', error);
-        alert("Failed to send email.");
-      });
+      // emailjs.send('service_315nxpu', 'template_bmv0yrr', {
+      //   name: name,
+      //   phone: phone,
+      //   email: email,
+      //   message: message
+      // }).then(function(response) {
+      //   console.log('Success:', response);
+      //   document.getElementById("popupOverlay").style.display = "flex";
+      //   document.getElementById("contactForm").reset();
+      // }, function(error) {
+      //   console.log('Error:', error);
+      //   alert("Failed to send email.");
+      // });
     
   }
 }
