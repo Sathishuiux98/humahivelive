@@ -42,7 +42,7 @@ function sendmail() {
     
         };
     
-        try {
+        if(true) {
     console.log('sent successfully')
     
             const response = await fetch(url, {
@@ -61,12 +61,7 @@ function sendmail() {
             } else {
                 console.error('Error sending email:', response.statusText);
             }
-        } catch (error) {
-    console.log('sent successfully')
-    
-            console.error('Error:', error);
-        }
-    };
+        }     };
     
     sendEmail();
     
