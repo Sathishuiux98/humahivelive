@@ -20,7 +20,7 @@ function sendmail() {
       const message = document.getElementById("usermessage").value;
 
       const sendEmail = async () => {
-        const apiKey = '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';
+        const apiKey = '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';
         const url = 'https://api.sendinblue.com/v3/smtp/email';
         
         body = 'Hi HumaHive,<br>Someone has reached out to you via your website regarding your HR services. The details of the user are provided below:<br><br>Name : <NAME><br>Email : <EMAIL><br>Phone Number : <PHONE><br>Message : <MESSAGE>'
