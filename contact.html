@@ -88,46 +88,43 @@
             <img src="../assets/contact_img.svg" class="contact_mob" alt=""> 
         </div>
         <div class="col-12 col-md-6 p-0">
-            <form id="contactForm">
-         <div class="contact_details d-flex flex-column gap-4">
-            <p class="connection_text">Lets have a connect</p>
-            <div class="d-flex flex-column name">
-                <label name="name">Name</label>
-                <input type="text"id="username" name="name" class="pl-3" placeholder="Enter your name">
-                <span class="error-message" id="usernameError"></span>    
-            </div>
-            <div class="d-flex gap-3 phn_mob">
-                <div class="d-flex flex-column phone col-12 col-md-6">
-                    <label name="phone">Phone Number</label>
-                    <input type="text" id="usermobile" name="phone" placeholder="Enter your phone number">
-                    <span class="error-message" id="phoneError"></span>    
-                </div>
-                <div class="d-flex flex-column email col-12 col-md-6">
-                    <label name="email">Email</label>
-                    <input type="email" id="useremail" name="email"  placeholder="Enter your email"> 
-                    <span class="error-message" id="emailError"></span>   
-                </div>
-        
-            </div>
-    
-           
-            <div class="d-flex flex-column message">
-                <label name="message">Message</label>
-                <input type="text" id="usermessage" name="message">  
-                <span class="error-message" id="messageError"></span>   
-            </div>
+<form id="contactForm" action="https://formspree.io/f/xjkgyrer" method="POST">
+  <div class="contact_details d-flex flex-column gap-4">
+    <p class="connection_text">Let's have a connect</p>
 
-           <div class="humahive-container-header">
-            <div class="contact-button">
-                <div class="contact-text" id="contactForm" onclick="sendmail()" type="submit">Send Message</div>
-            </div>
-           </div>
+    <div class="d-flex flex-column name">
+      <label for="username">Name</label>
+      <input type="text" id="username" name="name" class="pl-3" placeholder="Enter your name">
+      <span class="error-message" id="usernameError"></span>    
+    </div>
 
+    <div class="d-flex gap-3 phn_mob">
+      <div class="d-flex flex-column phone col-12 col-md-6">
+        <label for="usermobile">Phone Number</label>
+        <input type="text" id="usermobile" name="phone" placeholder="Enter your phone number">
+        <span class="error-message" id="phoneError"></span>    
+      </div>
+      <div class="d-flex flex-column email col-12 col-md-6">
+        <label for="useremail">Email</label>
+        <input type="email" id="useremail" name="email" placeholder="Enter your email"> 
+        <span class="error-message" id="emailError"></span>   
+      </div>
+    </div>
 
-      
-    
-         </div>
-        </form>
+    <div class="d-flex flex-column message">
+      <label for="usermessage">Message</label>
+      <input type="text" id="usermessage" name="message">  
+      <span class="error-message" id="messageError"></span>   
+    </div>
+
+    <div class="humahive-container-header">
+      <div class="contact-button">
+        <div class="contact-text" id="contactForm" onclick="sendmail()" type="submit">Send Message</div>
+      </div>
+    </div>
+  </div>
+</form>
+
         </div>
     
     </div>
