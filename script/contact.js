@@ -1,6 +1,6 @@
 // Function to handle form submission
 function sendmail(event) {
-  event.preventDefault();  // Prevent the default form submission
+  // event.preventDefault();  // Prevent the default form submission
 
   // Get form values
   var name = document.getElementById("username").value;
