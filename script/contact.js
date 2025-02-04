@@ -1,42 +1,43 @@
 // Function to handle form submission
 function sendmail(event) {
-  // event.preventDefault();  // Prevent the default form submission
+    document.getElementById("popupOverlay").style.display = "flex";
+  // // event.preventDefault();  // Prevent the default form submission
 
-  // Get form values
-  var name = document.getElementById("username").value;
-  var phone = document.getElementById("usermobile").value;
-  var email = document.getElementById("useremail").value;
-  var message = document.getElementById("usermessage").value;
+  // // Get form values
+  // var name = document.getElementById("username").value;
+  // var phone = document.getElementById("usermobile").value;
+  // var email = document.getElementById("useremail").value;
+  // var message = document.getElementById("usermessage").value;
 
-  // Validate the form fields
-  if (validateForm(name, phone, email, message)) {
-    // Prepare the data to be sent to Formspree
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("email", email);
-    formData.append("message", message);
+  // // Validate the form fields
+  // if (validateForm(name, phone, email, message)) {
+  //   // Prepare the data to be sent to Formspree
+  //   const formData = new FormData();
+  //   formData.append("name", name);
+  //   formData.append("phone", phone);
+  //   formData.append("email", email);
+  //   formData.append("message", message);
 
-    // Send the form data to Formspree using Fetch API
-    fetch("https://formspree.io/f/xjkgyrer", {
-      method: "POST",
-      body: formData
-    })
-    .then((response) => {
-      if (response.ok) {
-        console.log('Message sent successfully!');
-        document.getElementById("popupOverlay").style.display = "flex"; // Show success popup
-        document.getElementById("contactForm").reset(); // Reset the form
-      } else {
-        console.error('Error sending message:', response.statusText);
-        alert("Failed to send message. Please try again.");
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      alert("An error occurred while sending the message.");
-    });
-  }
+  //   // Send the form data to Formspree using Fetch API
+  //   fetch("https://formspree.io/f/xjkgyrer", {
+  //     method: "POST",
+  //     body: formData
+  //   })
+  //   .then((response) => {
+  //     if (response.ok) {
+  //       console.log('Message sent successfully!');
+  //       document.getElementById("popupOverlay").style.display = "flex"; // Show success popup
+  //       document.getElementById("contactForm").reset(); // Reset the form
+  //     } else {
+  //       console.error('Error sending message:', response.statusText);
+  //       alert("Failed to send message. Please try again.");
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error:', error);
+  //     alert("An error occurred while sending the message.");
+  //   });
+  // }
 }
 
 // Validate the form fields
